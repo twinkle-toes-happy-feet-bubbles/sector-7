@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Product Upload | Netizen</title>
+
+  <link rel="stylesheet" href="./style.css">
+
+</head>
+
+<body>
+
+  <div class="container">
+
+    <header>
+
+      <h3>Product List</h3>
+
+    </header>
+
+    <div class="table-wrapper">
+
+      <table class="table-products">
+
+        <tr>
+
+          <th>Product Name</th>
+
+          <th>Brand Name</th>
+
+          <th>Product Cost</th>
+
+        </tr>
+
+      </table>
+
+      <button class="btn btn-add">Add Product</button>
+
+    </div>
+
+    <!-- Add Modal -->
+
+    <div class="add-modal modal-wrapper">
+
+      <div class="modal">
+
+        <div class="modal-header"><h3>Add New Product</h3></div>
+
+        <div class="modal-body">
+
+          <form class="form" autocomplete="off">
+
+            
+
+            <img style="width: 100px; height: 100px;"src="" alt="" id="image">
+
+            <input type="text" name="ProductName" placeholder="Product Name">
+
+            <input type="text" name="BrandName" placeholder="Brand Name">
+
+            <input type="number" name="Price" placeholder="₹ - Price">
+
+            
+
+            <input type="file" id="file">
+
+            
+
+            <progress id="progress_bar" value="0" max="100"></progress>
+
+            
+
+            <button class="btn btn-modal">Submit</button>
+
+            
+
+          </form>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- Edit Modal -->
+
+    <div class="edit-modal modal-wrapper">
+
+      <div class="modal">
+
+        <div class="modal-header"><h3>Edit Product</h3></div>
+
+        <div class="modal-body">
+
+          <form class="form" autocomplete="off">
+
+            <img style="width: 100px; height: 100px;"src="" alt="" id="image">
+
+          
+
+            <input type="text" name="ProductName" placeholder="Product Name">
+
+            <input type="text" name="BrandName" placeholder="Brand Name">
+
+            <input type="number" name="Price" placeholder="₹ - Price">
+
+            
+
+            <input type="file" id="file">
+
+            
+
+            <progress id="progress_bar" value="0" max="100"></progress>
+
+            <button class="btn btn-modal">Submit</button>
+
+          </form>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- The core Firebase JS SDK is always required and must be listed first -->
+
+  <script src="https://www.gstatic.com/firebasejs/7.21.0/firebase-app.js"></script>
+
+  <!-- TODO: Add SDKs for Firebase products that you want to use
+
+      https://firebase.google.com/docs/web/setup#available-libraries -->
+
+  <script src="https://www.gstatic.com/firebasejs/7.21.0/firebase-firestore.js"></script>
+
+   <script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-storage.js"></script>
+
+  <script>
+
+    // Your web app's Firebase configuration
+
+    var firebaseConfig = {
+
+    apiKey: "AIzaSyDPbCB9o3c44_KqEcTL8PrPXvOioNI9Skw",
+
+    authDomain: "netizen-70f7b.firebaseapp.com",
+
+    databaseURL: "https://netizen-70f7b-default-rtdb.asia-southeast1.firebasedatabase.app",
+
+    projectId: "netizen-70f7b",
+
+    storageBucket: "netizen-70f7b.appspot.com",
+
+    messagingSenderId: "900442479711",
+
+    appId: "1:900442479711:web:8fe818cd16e8feeaff8fea",
+
+     measurementId: "G-G8XQQBBY8F"
+
+    };
+
+    // Initialize Firebase
+
+    firebase.initializeApp(firebaseConfig);
+
+    const db = firebase.firestore();
+
+  </script>
+
+  <script src="script.js"></script>
+
+</body>
+
+</html>
