@@ -1,0 +1,325 @@
+  <!DOCTYPE html>
+
+<html>
+
+    <head>
+
+        <title>
+
+            Stores near you
+
+        </title> 
+
+        <link rel="stylesheet" href="buycard.css">
+
+           <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+
+    </head>
+
+
+
+    <body>
+
+ <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+
+
+<div id="mySidebar" class="sidebar" onmouseover="toggleSidebar()" onmouseout="toggleSidebar()">
+
+  <a href="profile.html"><span><i class="material-icons">person</i><span class="icon-text">profile</span></a><br>
+
+  <a href="stores.html"><i class="material-icons">store</i><span class="icon-text"></span>local stores</a></span>
+
+  </a><br>
+
+  <a href="news.html"><i class="material-icons">newspaper</i><span class="icon-text"></span>news</span></a><br>
+
+  <a href="explore.html"><i class="material-icons">explore</i><span class="icon-text"></span>explore<span></a>
+
+  <br>
+
+  <a href="chat.html"><i class="material-icons">forum</i><span class="icon-text"></span>chat<span></a>
+
+</div>
+
+
+
+<div id="main">
+
+  
+
+</div>
+
+    <div class="search-box">
+
+      <input type="text" placeholder="Type to search..">
+
+      <div class="search-icon">
+
+        <i class="fas fa-search"></i>
+
+      </div>
+
+<div class="cancel-icon">
+
+        <i class="fas fa-times"></i>
+
+      </div>
+
+<div class="search-data">
+
+</div>
+
+</div>
+
+<script>
+
+      const searchBox = document.querySelector(".search-box");
+
+      const searchBtn = document.querySelector(".search-icon");
+
+      const cancelBtn = document.querySelector(".cancel-icon");
+
+      const searchInput = document.querySelector("input");
+
+      const searchData = document.querySelector(".search-data");
+
+      searchBtn.onclick =()=>{
+
+        searchBox.classList.add("active");
+
+        searchBtn.classList.add("active");
+
+        searchInput.classList.add("active");
+
+        cancelBtn.classList.add("active");
+
+        searchInput.focus();
+
+        if(searchInput.value != ""){
+
+          var values = searchInput.value;
+
+          searchData.classList.remove("active");
+
+          searchData.innerHTML = "You just typed " + "<span style='font-weight: 500;'>" + values + "</span>";
+
+        }else{
+
+          searchData.textContent = "";
+
+        }
+
+      }
+
+      cancelBtn.onclick =()=>{
+
+        searchBox.classList.remove("active");
+
+        searchBtn.classList.remove("active");
+
+        searchInput.classList.remove("active");
+
+        cancelBtn.classList.remove("active");
+
+        searchData.classList.toggle("active");
+
+        searchInput.value = "";
+
+      }
+
+    </script>
+
+  <div class="card">
+
+    <div class="up">
+
+      <img src="images.jpeg" alt="shoe">
+
+
+
+    </div>
+
+    <div class="down">
+
+      <div class="product-info">
+
+        <div class="product-name">
+
+          <h1>Shoes1</h1>
+
+         
+
+        </div>
+
+        <div class="details">
+
+          <h3>Cold collection</h3>
+
+          <h2>Men sneaker</h2>
+
+          <h4>$</span>200</h4>
+
+          <h4 class="dis">$</span>400</h4>
+
+        </div>
+
+        <ul>
+
+          <li>SIZE</li>
+
+          <li class="backgound">7</li>
+
+          <li class="backgound">8</li>
+
+          <li class="backgound">9</li>
+
+          <li class="backgound">10</li>
+
+          <li class="backgound">11</li>
+
+        </ul>
+
+        <ul>
+
+          <li>COLOR</li>
+
+          <li class="yellow"></li>
+
+          <li class="black"></li>
+
+          <li class="blue"></li>
+
+        </ul>
+
+        <br>
+
+        <input type="button" value="BUY NOW" class="buy-now">
+
+        <input type="button" value="Add to cart" class="cart">
+
+
+
+      </div>
+
+    </div>
+
+  </div>
+
+    <div class="card">
+
+
+
+    <div class="up">
+
+
+
+      <img src="images.jpeg" alt="shoe">
+
+
+
+    </div>
+
+    <div class="down">
+
+      <div class="product-info">
+
+        <div class="product-name">
+
+          <h1>Shoes2</h1>
+
+         
+
+        </div>
+
+        <div class="details">
+
+          <h3>Cold collection</h3>
+
+          <h2>Men sneaker</h2>
+
+          <h4>$</span>200</h4>
+
+          <h4 class="dis">$</span>400</h4>
+
+        </div>
+
+        <ul>
+
+          <li>SIZE</li>
+
+          <li class="backgound">7</li>
+
+          <li class="backgound">8</li>
+
+          <li class="backgound">9</li>
+
+          <li class="backgound">10</li>
+
+          <li class="backgound">11</li>
+
+        </ul>
+
+        <ul>
+
+          <li>COLOR</li>
+
+          <li class="yellow"></li>
+
+          <li class="black"></li>
+
+          <li class="blue"></li>
+
+        </ul>
+
+        <br>
+
+        <input type="button" value="BUY NOW" class="buy-now">
+
+        <input type="button" value="Add to cart" class="cart">
+
+
+
+      </div>
+
+    </div>
+
+  </div>
+
+    </body>
+
+    <script>
+
+      var mini = true;
+
+
+
+function toggleSidebar() {
+
+  if (mini) {
+
+    console.log("opening sidebar");
+
+    document.getElementById("mySidebar").style.width = "250px";
+
+    document.getElementById("main").style.marginLeft = "250px";
+
+    this.mini = false;
+
+  } else {
+
+    console.log("closing sidebar");
+
+    document.getElementById("mySidebar").style.width = "85px";
+
+    document.getElementById("main").style.marginLeft = "85px";
+
+    this.mini = true;
+
+  }
+
+}
+
+    </script>
+
+</html>
