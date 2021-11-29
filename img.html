@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+
+
+
+<html lang="en">
+
+
+
+
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>firebase storage</title>
+
+    <script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-app.js"></script>
+
+    <script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-storage.js"></script>
+
+</head>
+
+
+
+<body>
+
+    <input type="file" id="file">
+
+    <progress id="progress_bar" value="0" max="100"></progress>
+
+    <img src="" alt="" id="image">
+
+    <script>
+
+      // Your web app's Firebase configuration
+
+var firebaseConfig = {
+
+   apiKey: "AIzaSyDPbCB9o3c44_KqEcTL8PrPXvOioNI9Skw",
+
+    authDomain: "netizen-70f7b.firebaseapp.com",
+
+    databaseURL: "https://netizen-70f7b-default-rtdb.asia-southeast1.firebasedatabase.app",
+
+    projectId: "netizen-70f7b",
+
+    storageBucket: "netizen-70f7b.appspot.com",
+
+    messagingSenderId: "900442479711",
+
+    appId: "1:900442479711:web:8fe818cd16e8feeaff8fea",
+
+     measurementId: "G-G8XQQBBY8F"
+
+};
+
+// Initialize Firebase
+
+firebase.initializeApp(firebaseConfig);
+
+
+
+document.getElementById('file').addEventListener('change', (event) => {
+
+    const file = event.target.files[0];
+
+    const storageRef = firebase.storage().ref('products/' + file.name);
+
+
+
+    storageRef.put(file).on('state_changed', (snapshot) => {
+
+        const progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+
+        console.log(progress);
+
+        const progressBar = document.getElementById('progress_bar');
+
+        progressBar.value = progress;
+
+    });
+
+
+
+    storageRef.getDownloadURL().then(function(url){
+
+        const image = document.getElementById('image');
+
+        image.src = url;
+
+        console.log(url);
+
+        image.src = url;
+
+        console.log(url)
+
+        console.log(url);
+
+    });
+
+});
+
+    </script>
+
+</body>
+
+
+
+</html>
