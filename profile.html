@@ -1,0 +1,185 @@
+  <!DOCTYPE html>
+
+  <html>
+
+  <head>
+
+    <title>
+
+      Stores near you
+
+    </title>
+
+    <link rel="stylesheet" href="buycard.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+
+  </head>
+
+  <body>
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+    <div id="mySidebar" class="sidebar" onmouseover="toggleSidebar()" onmouseout="toggleSidebar()">
+
+      <a href="profile.html"><span><i class="material-icons">person</i><span class="icon-text">profile</span></a><br>
+
+      <a href="stores.html"><i class="material-icons">store</i><span class="icon-text"></span>local stores</a></span>
+
+      </a><br>
+
+      <a href="news.html"><i class="material-icons">newspaper</i><span class="icon-text"></span>news</span></a><br>
+
+      <a href="explore.html"><i class="material-icons">explore</i><span class="icon-text"></span>explore<span></a>
+
+      <br>
+
+      <a href="chat.html"><i class="material-icons">forum</i><span class="icon-text"></span>chat<span></a>
+
+    </div>
+
+    <div id="main">
+
+    </div>
+
+    <div class="card">
+
+      <div class="up">
+
+       
+
+        <img src="images.jpeg" alt="Profile pic" style="border-radius: 40%;"/>
+
+      </div>
+
+      <div class="down">
+
+        <div class="product-info">
+
+          <div class="product-name">
+
+            <h1>Profile</h1>
+
+            <h2>Name: <span style="font-weight: 200">Pajyoth Reddy</span></h2>
+
+            <h2>Address<br> <span style="font-weight: 200;">Bhavani nagar, Hanamkonda, 506001</span></h2>
+
+            <h2>Phone No.: <span style="font-weight: 200;">9044773975</h2>
+
+            <br>
+
+            <br>
+
+            <h3>Area code <span style="font-weight: 200;">11234</span></h3>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <br>
+
+    <br>
+
+    <button onclick=" firebase.auth().signOut().then(function() {
+
+     console.log('Signed Out');
+
+     }, function(error) {
+
+     console.error('Sign Out Error', error);
+
+     });">Signout</button>
+
+    <br>
+
+  </body>
+
+  
+
+  <script>
+
+    
+
+    var mini = true;
+
+    function toggleSidebar() {
+
+      if (mini) {
+
+        console.log("opening sidebar");
+
+        document.getElementById("mySidebar").style.width = "250px";
+
+        document.getElementById("main").style.marginLeft = "250px";
+
+        this.mini = false;
+
+      } else {
+
+        console.log("closing sidebar");
+
+        document.getElementById("mySidebar").style.width = "85px";
+
+        document.getElementById("main").style.marginLeft = "85px";
+
+        this.mini = true;
+
+      }
+
+    }
+
+  </script>
+
+  <script src="https://www.gstatic.com/firebasejs/4.5.1/firebase.js"></script>
+
+  <script>
+
+    var config = {
+
+      apiKey: "AIzaSyDPbCB9o3c44_KqEcTL8PrPXvOioNI9Skw",
+
+      authDomain: "netizen-70f7b.firebaseapp.com",
+
+      projectId: "netizen-70f7b",
+
+      storageBucket: "netizen-70f7b.appspot.com",
+
+      messagingSenderId: "900442479711",
+
+      appId: "1:900442479711:web:8fe818cd16e8feeaff8fea",
+
+      measurementId: "G-G8XQQBBY8F"
+
+    };
+
+    firebase.initializeApp(config);
+
+  </script>
+
+ 
+
+  <script>
+
+  /*
+
+  signoutfunc() {
+
+    firebase.auth().signOut().then(function() {
+
+    console.log('Signed Out');
+
+    }, function(error) {
+
+    console.error('Sign Out Error', error);
+
+    });
+
+  } */
+
+  </script>
+
+  </html>
